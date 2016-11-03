@@ -1,0 +1,79 @@
+html {
+    height: 100%
+}
+
+body {
+    /*font-family: Arial, 'Hiragino Sans GB', md-hsgb, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;*/
+    height: 100%;
+    margin-right: calc(100% - 100vw);
+    overflow-x: hidden;
+    overflow: hidden;
+    background-color: #eee
+}
+
+.multipage-display-panel {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden
+}
+
+.multipage-display-page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+    background-color: #fff;
+    display: inline-block
+}
+
+.multipage-display-top-mark {
+    color: #bdbdbd;
+    display: block;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+    margin: 3vw 0;
+    font-size: 6vw;
+    font-weight: 700;
+    position: absolute;
+    top: 0
+}
+
+.multipage-display-bottom-mark {
+    color: #bdbdbd;
+    display: block;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+    margin: 3vw 0;
+    font-size: 6vw;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0
+}
+
+.multipage-animate {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+.multipage-active .multipage-animate {
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
+}
+
+.loading {
+    height: 100%;
+    width: 100%;
+    background: #FFFFFF;
+    position: relative;
+}
+
+.loading img {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+}
