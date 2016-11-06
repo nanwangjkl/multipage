@@ -1,16 +1,16 @@
-$(document).ready(function(){
-	Multipage.initPageSlide();
-});
+// $(document).ready(function(){
+// 	Multipage.initPageSlide();
+// });
 
 var Multipage = {
 	// 初始化页面滑动效果
 	currentPage: 0,
-	pageCount: $(".display-page").length,
+	pageCount: $(".multipage-display-page").length,
 	winHeight: $(window).height(),
 	initPageSlide: function(){
 		var that = this;
 
-		$(".display-page").each(function(){
+		$(".multipage-display-page").each(function(){
 			var targetPage = this;
 			// 添加hammer事件
 			var hammertime = new Hammer(this);
@@ -46,7 +46,7 @@ var Multipage = {
 					pos.y=0;
 
 					setTimeout(function(){
-						$(targetPage).removeClass('wl-active').next().addClass('wl-active');
+						$(targetPage).removeClass('multipage-active').next().addClass('multipage-active');
 					}, 300);
 
 					that.currentPage++;
@@ -61,7 +61,7 @@ var Multipage = {
 					pos.y=0;
 
 					setTimeout(function(){
-						$(targetPage).removeClass('wl-active').prev().addClass('wl-active');
+						$(targetPage).removeClass('multipage-active').prev().addClass('multipage-active');
 					}, 300);
 
 					that.currentPage--;
@@ -78,11 +78,13 @@ var Multipage = {
 		});
 
 		// 让除第一个页面之外的所有页面都放置在窗口下方
-		$(".display-page:gt(0)").each(function(){
-			that.updatePos(0, that.winHeight, this);
+		$(".multipage-display-page").each(function(index){
+			if (index>0) {
+				that.updatePos(0, that.winHeight, this);
+			}
 		});
 
-		$('.display-page:first').addClass('wl-active');
+		$('.multipage-display-page:first-child').addClass('multipage-active');
 	},
 
 	// 无动画更新页面位置的方法
@@ -119,13 +121,13 @@ var Multipage = {
 		if (this.currentPage>=(this.pageCount-1)) {
 			return;
 		}
-		var targetPage = $(".display-page")[this.currentPage];
+		var targetPage = $(".multipage-display-page")[this.currentPage];
 		this.updateAni(0, 0-this.winHeight, targetPage);
 		this.updateAni(0, 0, $(targetPage).next().get()[0]);
 		this.updatePos(0, 0-this.winHeight, $(targetPage).prev().get()[0]);
 
 		setTimeout(function(){
-			$(targetPage).removeClass('wl-active').next().addClass('wl-active');
+			$(targetPage).removeClass('multipage-active').next().addClass('multipage-active');
 		}, 300);
 
 		this.currentPage++;
@@ -135,13 +137,13 @@ var Multipage = {
 		if (this.currentPage<=0) {
 			return;
 		}
-		var targetPage = $(".display-page")[this.currentPage];
+		var targetPage = $(".multipage-display-page")[this.currentPage];
 		this.updateAni(0, this.winHeight, targetPage);
 		this.updateAni(0, 0, $(targetPage).prev().get()[0]);
 		this.updatePos(0, this.winHeight, $(targetPage).next().get()[0]);
 
 		setTimeout(function(){
-			$(targetPage).removeClass('wl-active').prev().addClass('wl-active');
+			$(targetPage).removeClass('multipage-active').prev().addClass('multipage-active');
 		}, 300);
 
 		this.currentPage--;
@@ -152,7 +154,7 @@ var Multipage = {
 			return;
 		}
 
-		var pageSet = $(".display-page");
+		var pageSet = $(".multipage-display-page");
 		if (pageNum<this.currentPage) {
 			var pageSlice = pageSet.slice(pageNum+1, this.currentPage)
 			for (var i = 0; i < pageSlice.length; i++) {
@@ -165,8 +167,8 @@ var Multipage = {
 			this.currentPage = pageNum;
 
 			setTimeout(function(){
-				$(pageSet[this.currentPage]).removeClass('wl-active')
-				$(pageSet[pageNum]).addClass('wl-active');
+				$(pageSet[this.currentPage]).removeClass('multipage-active')
+				$(pageSet[pageNum]).addClass('multipage-active');
 			}, 300);
 		}else{
 			var pageSlice = pageSet.slice(this.currentPage+1, pageNum)
@@ -180,8 +182,8 @@ var Multipage = {
 			this.currentPage = pageNum;
 
 			setTimeout(function(){
-				$(pageSet[this.currentPage]).removeClass('wl-active')
-				$(pageSet[pageNum]).addClass('wl-active');
+				$(pageSet[this.currentPage]).removeClass('multipage-active')
+				$(pageSet[pageNum]).addClass('multipage-active');
 			}, 300);
 		}
 	}

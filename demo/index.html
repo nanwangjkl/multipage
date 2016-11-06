@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>多边形模板</title>
+
+		<link rel="stylesheet" type="text/css" href="../src/multipage.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+
+	<body>
+		<span class="multipage-display-top-mark">已经是第一页</span>
+		<span class="multipage-display-bottom-mark">已经是最后一页</span>
+		<div class="multipage-display-panel">
+
+			<div class="multipage-display-page">
+				<div class="page-wrapper page-background-1">
+
+					<div class="title-page-title multipage-animate shadow-box-dark">
+						<h1>标题页标题</h1>
+					</div>
+
+					<div class="title-page-subtitle multipage-animate shadow-box-dark">
+						<h3>子标题</h3>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="multipage-display-page">
+				<div class="page-wrapper page-background-1">
+
+					<div class="content1-page-title multipage-animate shadow-box-dark">
+						<h3>产品特性</h3>
+					</div>
+
+					<div class="content1-page-img shadow-box-dark">
+						<img src="img/content1.jpg" class="img-responsive">
+					</div>
+
+					<div class="content1-page-text multipage-animate shadow-box-dark">
+						<p>丰富的模板市场，满足您任何风格、任何用途的要求。</p>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="multipage-display-page">
+				<div class="page-wrapper page-background-1">
+
+					<div class="end-page-title multipage-animate shadow-box-dark">
+						<h1>结尾页</h1>
+					</div>
+
+					<div class="end-page-link shadow-box-dark">
+						<a href="javascript:void(0);">链接</a>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+		<script src="//cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js"></script>
+		<script src="../src/multipage.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				Multipage.initPageSlide();
+			});
+		</script>
+	</body>
+</html>
