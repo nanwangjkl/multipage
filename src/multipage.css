@@ -58,13 +58,13 @@ body {
 }
 
 .multipage-animate {
-    animation-play-state: paused;
-    -webkit-animation-play-state: paused;
+    /*-webkit-animation-play-state: paused;*/
+    /*animation-play-state: paused;*/
 }
 
 .multipage-active .multipage-animate {
-    animation-play-state: running;
     -webkit-animation-play-state: running;
+    animation-play-state: running;
 }
 
 .loading {
