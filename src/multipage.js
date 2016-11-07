@@ -64,7 +64,7 @@ var Multipage = {
                     pos.y = 0;
 
                     setTimeout(function() {
-                        this.setLastPageAni(targetPage);
+                        this.setPrevPageAni(targetPage);
                     }.bind(that), 300);
 
                     that.currentPage--;
@@ -122,7 +122,7 @@ var Multipage = {
 		var $nextAni = $(nextPage).find('.multipage-animate');
     },
 
-    setLastPageAni: function(targetPage) {
+    setPrevPageAni: function(targetPage) {
         var lastpage = $(targetPage).removeClass('multipage-active').prev().addClass('multipage-active')[0];
 		var $lastAni = $(lastpage).find('.multipage-animate');
     },
@@ -153,7 +153,7 @@ var Multipage = {
         this.updatePos(0, this.winHeight, $(targetPage).next().get()[0]);
 
         setTimeout(function() {
-            this.setLastPageAni(targetPage);
+            this.setPrevPageAni(targetPage);
         }.bind(this), 300);
 
         this.currentPage--;
