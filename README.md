@@ -2,8 +2,11 @@
 
 一个翻页HTML5模版，与其他模版不同的是这个模版并不是直接换页，而是跟随手指移动，并根据滑动距离决定如何换页。
 ## Demo 样例
+
 [DEMO Click Here](https://nanwangjkl.github.io/multipage/demo/index.html)
-![qrcode](//nanwangjkl.github.io/multipage/qrcode.png)
+
+![qrcode](https://nanwangjkl.github.io/multipage/qrcode.png)
+
 ## Device support 设备支持
 Android和iOS主流设备均支持
 ## Usage 用法
@@ -47,7 +50,7 @@ Android和iOS主流设备均支持
 ## Function 方法
 |  Function     | Arguments  | Description                 |
 |---------------|------------|-----------------------------|
-| initPageSlide |            | 初始化页面                   |
+| initPageSlide |            | 初始化页面                    |
 | prevPage      |            | 跳转到上一页                  |
 | nextPage      |            | 跳转到下一页                  |
-| jumpToPage    | pageIndex | 跳转到参数指定的页，页索引从0开始 |
+| jumpToPage    | pageIndex  | 跳转到参数指定的页，页索引从0开始 |
